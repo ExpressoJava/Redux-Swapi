@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 export const FETCHING_CHARS = 'FETCHING_ChARS'
 export const ERROR_FETCHING_CHARS = 'ERROR_FETCHING_CHARS'
@@ -13,7 +13,7 @@ export const CHARS_FETCHED = 'CHARS_FETCHED'
 // the url to fetch characters from is `https://swapi.co/api/people/`
 // remember that now we have controll over our thunk-based action creator
 
-const fetchChars = () => {
+export const fetchChars = () => {
     const starWarsChars = axios.get(`https://swapi.co/api/people`);
     return dispatch => {
         dispatch({ type: FETCHING_CHARS })
@@ -28,4 +28,3 @@ const fetchChars = () => {
     }
 }
 
-fetchChars();
