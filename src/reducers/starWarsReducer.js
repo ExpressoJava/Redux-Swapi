@@ -18,9 +18,9 @@ export const charsReducer = (state = initialState, action) => {
     case FETCHING_CHARS:
       return Object.assign({}, state, { fetching: true });
     case ERROR_FETCHING_CHARS:
-      return Object.assign({}, state, { fetching: true });
+      return Object.assign({}, state, { fetching: false, error: action.payload });
     case CHARS_FETCHED:
-      return Object.assign({}, state, { fetching: true });
+      return Object.assign({}, state, { fetching: false, fetched: true, char: [...state.chars, ...action.payload] });
     default:
       return state;
   }
